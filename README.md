@@ -59,7 +59,6 @@ progressBar.setProgressPlaceHolderWidth(10);
 ```
 
 
-![1.png](https://github.com/hadibtf/SemiCircleArcProgressBar/blob/master/DemoSC/1.png "Demo Screen Shot")
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png =250x250)
+![1.png](https://github.com/hadibtf/SemiCircleArcProgressBar/blob/master/DemoSC/1.png  =100x20)
 ![2.png](https://github.com/hadibtf/SemiCircleArcProgressBar/blob/master/DemoSC/2.png "Demo Screen Shot")
 ![3.png](https://github.com/hadibtf/SemiCircleArcProgressBar/blob/master/DemoSC/3.png "Demo Screen Shot")
