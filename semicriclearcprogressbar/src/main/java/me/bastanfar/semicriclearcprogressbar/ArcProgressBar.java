@@ -1,4 +1,4 @@
-package me.bastanfar.semicirclearcprogressbar;
+package me.bastanfar.semicriclearcprogressbar;
 
 import android.content.Context;
 import android.content.res.TypedArray;
