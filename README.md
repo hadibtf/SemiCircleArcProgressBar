@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/hadibtf/SemiCircleArcProgressBar.svg)](https://jitpack.io/#hadibtf/SemiCircleArcProgressBar)
 # SemiCircleArcProgressBar
 
 A fully Customizable Semi Circle Arc Progress Bar.
@@ -55,7 +56,6 @@ progressBar.setProgressPlaceHolderWidth(10);
 ```
 
 
-[![](https://jitpack.io/v/hadibtf/SemiCircleArcProgressBar.svg)](https://jitpack.io/#hadibtf/SemiCircleArcProgressBar)
 
 ![demo.gif](https://github.com/hadibtf/SemiCircleArcProgressBar/blob/master/DemoGif/demo.gif "Demo Gif") 
 
