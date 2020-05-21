@@ -28,7 +28,7 @@ And then add this dependency to your Project build.gradle
 
 ```bash
 dependencies {
-    implementation 'com.github.hadibtf:SemiCircleArcProgressBar:1.1.0'
+    implementation 'com.github.hadibtf:SemiCircleArcProgressBar:1.1.1'
 }
 ```
 
