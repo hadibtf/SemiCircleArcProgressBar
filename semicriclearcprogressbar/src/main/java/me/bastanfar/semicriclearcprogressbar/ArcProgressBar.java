@@ -44,42 +44,22 @@ public class ArcProgressBar extends View
     {
         super(context, attrs);
         setAttrs(context, attrs);
+        init();
     }
 
     public ArcProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr)
     {
         super(context, attrs, defStyleAttr);
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ArcProgressBar, 0, 0);
-        try
-        {
-            progressPlaceHolderColor = typedArray.getColor(R.styleable.ArcProgressBar_progressPlaceHolderColor, Color.GRAY);
-            progressBarColor = typedArray.getColor(R.styleable.ArcProgressBar_progressBarColor, Color.WHITE);
-            progressPlaceHolderWidth = typedArray.getInt(R.styleable.ArcProgressBar_progressPlaceHolderWidth, 25);
-            progressBarWidth = typedArray.getInt(R.styleable.ArcProgressBar_progressBarWidth, 10);
-            percent = typedArray.getInt(R.styleable.ArcProgressBar_percent, 76);
-        } finally
-        {
-            typedArray.recycle();
-        }
-
+        setAttrs(context, attrs);
+        init();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public ArcProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes)
     {
         super(context, attrs, defStyleAttr, defStyleRes);
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ArcProgressBar, 0, 0);
-        try
-        {
-            progressPlaceHolderColor = typedArray.getColor(R.styleable.ArcProgressBar_progressPlaceHolderColor, Color.GRAY);
-            progressBarColor = typedArray.getColor(R.styleable.ArcProgressBar_progressBarColor, Color.WHITE);
-            progressPlaceHolderWidth = typedArray.getInt(R.styleable.ArcProgressBar_progressPlaceHolderWidth, 25);
-            progressBarWidth = typedArray.getInt(R.styleable.ArcProgressBar_progressBarWidth, 10);
-            percent = typedArray.getInt(R.styleable.ArcProgressBar_percent, 76);
-        } finally
-        {
-            typedArray.recycle();
-        }
+        setAttrs(context, attrs);
+        init();
 
     }
 
@@ -94,7 +74,6 @@ public class ArcProgressBar extends View
         float progressAmount = percent * (float) 1.8;
         canvas.drawArc(progressBar, 180, 180, false, getPaint(progressPlaceHolderColor, progressPlaceHolderWidth));      //arg2: For the starting point, the starting point is 0 degrees from the positive direction of the x coordinate system. How many angles are arg3 selected to rotate clockwise?
         canvas.drawArc(progressBar, 180, progressAmount, false, getPaint(progressBarColor, progressBarWidth));      //arg2: For the starting point, the starting point is 0 degrees from the positive direction of the x coordinate system. How many angles are arg3 selected to rotate clockwise?
-
     }
 
     //Private Methods
@@ -157,7 +136,7 @@ public class ArcProgressBar extends View
         this.percent = percent;
         postInvalidate();
     }
-
+    
     //Custom Setter
     public void setPercentWithAnimation(final int percent)
     {
