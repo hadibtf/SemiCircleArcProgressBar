@@ -108,21 +108,25 @@ public class SemiCircleArcProgressBar extends View
     public void setProgressPlaceHolderColor(int color)
     {
         progressPlaceHolderColor = color;
+        postInvalidate();
     }
 
     public void setProgressBarColor(int color)
     {
         progressBarColor = color;
+        postInvalidate();
     }
 
     public void setProgressPlaceHolderWidth(int width)
     {
         progressPlaceHolderWidth = width;
+        postInvalidate();
     }
 
     public void setProgressBarWidth(int width)
     {
         progressBarWidth = width;
+        postInvalidate();
     }
 
     public void setPercent(int percent)
