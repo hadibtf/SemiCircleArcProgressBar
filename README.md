@@ -5,6 +5,9 @@ A fully Customizable Semi Circle Arc Progress Bar.
 You can customize the the width and color of both progress and progress place holder from Java and XML.
 Also you can set the amount of progress bar with percentage from Java and XML.
 Additionally you can set percentage with a smooth filling animation.
+
+![demo.gif](https://github.com/hadibtf/SemiCircleArcProgressBar/blob/master/DemoGif/demo.gif "Demo Gif") 
+
 # Setting Percentage With Animation
 Please note that if you set percentage with animation ".setPercentWithAnimation(10)" at the initial of your activity, set it with a delay to let the view to load and then animate.
 # Width to Height Ratio
@@ -54,10 +57,6 @@ progressBar.setProgressPlaceHolderWidth(10);
         app:progressBarWidth="10"
         app:progressPlaceHolderWidth="10" />
 ```
-
-
-
-![demo.gif](https://github.com/hadibtf/SemiCircleArcProgressBar/blob/master/DemoGif/demo.gif "Demo Gif") 
 
 ![1.png](https://github.com/hadibtf/SemiCircleArcProgressBar/blob/master/DemoSC/1.png "Demo Screen Shot") 
 
