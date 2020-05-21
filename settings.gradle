@@ -1,2 +1,3 @@
 rootProject.name='SemiCircleArcProgressBar'
 include ':app'
+include ':semicriclearcprogressbar'
