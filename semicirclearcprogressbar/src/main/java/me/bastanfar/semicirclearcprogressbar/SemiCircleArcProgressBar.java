@@ -16,7 +16,7 @@ import androidx.annotation.RequiresApi;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ArcProgressBar extends View
+public class SemiCircleArcProgressBar extends View
 {
     private static final int PADDING = 15;
 
@@ -31,36 +31,29 @@ public class ArcProgressBar extends View
     private int right = 0;
     private int bottom = 0;
 
-    private RectF progressBar;
-
     //Constructors
-    public ArcProgressBar(Context context)
+    public SemiCircleArcProgressBar(Context context)
     {
         super(context);
-        init();
     }
 
-    public ArcProgressBar(Context context, @Nullable AttributeSet attrs)
+    public SemiCircleArcProgressBar(Context context, @Nullable AttributeSet attrs)
     {
         super(context, attrs);
         setAttrs(context, attrs);
-        init();
     }
 
-    public ArcProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr)
+    public SemiCircleArcProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr)
     {
         super(context, attrs, defStyleAttr);
         setAttrs(context, attrs);
-        init();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public ArcProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes)
+    public SemiCircleArcProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes)
     {
         super(context, attrs, defStyleAttr, defStyleRes);
         setAttrs(context, attrs);
-        init();
-
     }
 
     @Override
@@ -72,21 +65,21 @@ public class ArcProgressBar extends View
         bottom = getMeasuredHeight() * 2;
 
         float progressAmount = percent * (float) 1.8;
-        canvas.drawArc(progressBar, 180, 180, false, getPaint(progressPlaceHolderColor, progressPlaceHolderWidth));      //arg2: For the starting point, the starting point is 0 degrees from the positive direction of the x coordinate system. How many angles are arg3 selected to rotate clockwise?
-        canvas.drawArc(progressBar, 180, progressAmount, false, getPaint(progressBarColor, progressBarWidth));      //arg2: For the starting point, the starting point is 0 degrees from the positive direction of the x coordinate system. How many angles are arg3 selected to rotate clockwise?
+        canvas.drawArc(getProgressBarRectF(), 180, 180, false, getPaint(progressPlaceHolderColor, progressPlaceHolderWidth));      //arg2: For the starting point, the starting point is 0 degrees from the positive direction of the x coordinate system. How many angles are arg3 selected to rotate clockwise?
+        canvas.drawArc(getProgressBarRectF(), 180, progressAmount, false, getPaint(progressBarColor, progressBarWidth));      //arg2: For the starting point, the starting point is 0 degrees from the positive direction of the x coordinate system. How many angles are arg3 selected to rotate clockwise?
     }
 
     //Private Methods
     private void setAttrs(Context context, @Nullable AttributeSet attrs)
     {
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ArcProgressBar, 0, 0);
+        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SemiCircleArcProgressBar, 0, 0);
         try
         {
-            progressPlaceHolderColor = typedArray.getColor(R.styleable.ArcProgressBar_progressPlaceHolderColor, Color.GRAY);
-            progressBarColor = typedArray.getColor(R.styleable.ArcProgressBar_progressBarColor, Color.WHITE);
-            progressPlaceHolderWidth = typedArray.getInt(R.styleable.ArcProgressBar_progressPlaceHolderWidth, 25);
-            progressBarWidth = typedArray.getInt(R.styleable.ArcProgressBar_progressBarWidth, 10);
-            percent = typedArray.getInt(R.styleable.ArcProgressBar_percent, 76);
+            progressPlaceHolderColor = typedArray.getColor(R.styleable.SemiCircleArcProgressBar_progressPlaceHolderColor, Color.GRAY);
+            progressBarColor = typedArray.getColor(R.styleable.SemiCircleArcProgressBar_progressBarColor, Color.WHITE);
+            progressPlaceHolderWidth = typedArray.getInt(R.styleable.SemiCircleArcProgressBar_progressPlaceHolderWidth, 25);
+            progressBarWidth = typedArray.getInt(R.styleable.SemiCircleArcProgressBar_progressBarWidth, 10);
+            percent = typedArray.getInt(R.styleable.SemiCircleArcProgressBar_percent, 76);
         } finally
         {
             typedArray.recycle();
@@ -105,9 +98,9 @@ public class ArcProgressBar extends View
         return paint;
     }
 
-    private void init()
+    private RectF getProgressBarRectF()
     {
-        progressBar = new RectF(left, top, right - PADDING, bottom - (PADDING * 2));
+        return new RectF(left, top, right - PADDING, bottom - (PADDING * 2));
     }
 
     //Setters
@@ -136,7 +129,7 @@ public class ArcProgressBar extends View
         this.percent = percent;
         postInvalidate();
     }
-    
+
     //Custom Setter
     public void setPercentWithAnimation(final int percent)
     {

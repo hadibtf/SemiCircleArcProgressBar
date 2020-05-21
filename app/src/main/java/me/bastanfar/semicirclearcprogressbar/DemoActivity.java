@@ -1,14 +1,11 @@
-package me.bastanfar.semicirclearcprogressbar.activities;
+package me.bastanfar.semicirclearcprogressbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import me.bastanfar.semicirclearcprogressbar.R;
-
 public class DemoActivity extends AppCompatActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
