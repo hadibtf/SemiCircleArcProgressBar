@@ -18,7 +18,7 @@ import java.util.TimerTask;
 
 public class SemiCircleArcProgressBar extends View
 {
-    private static final int PADDING = 15;
+    private int padding = 25;
 
     private int progressPlaceHolderColor;
     private int progressBarColor;
@@ -59,8 +59,9 @@ public class SemiCircleArcProgressBar extends View
     @Override
     protected void onDraw(Canvas canvas)
     {
-        top = PADDING;
-        left = PADDING;
+        padding = progressBarWidth > progressPlaceHolderWidth ? progressBarWidth + 5 : progressPlaceHolderWidth + 5;
+        top = padding;
+        left = padding;
         right = getMeasuredWidth();
         bottom = getMeasuredHeight() * 2;
 
@@ -100,7 +101,7 @@ public class SemiCircleArcProgressBar extends View
 
     private RectF getProgressBarRectF()
     {
-        return new RectF(left, top, right - PADDING, bottom - (PADDING * 2));
+        return new RectF(left, top, right - padding, bottom - (padding * 2));
     }
 
     //Setters
@@ -146,6 +147,6 @@ public class SemiCircleArcProgressBar extends View
                 if (step <= percent) setPercent(step++);
             }
 
-        }, 0, 5);
+        }, 0, 12);
     }
 }
